@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart of Hearts</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6e6;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .heart-shape {
+            display: grid;
+            grid-template-columns: repeat(7, 30px);
+            gap: 5px;
+            cursor: pointer;
+        }
+        .heart-shape span {
+            font-size: 28px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .text-page {
+            display: none;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff6666;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #ff4d4d;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-shape">
+        <span onclick="showFunFact(0)">❤️</span>
+        <span onclick="showFunFact(1)">❤️</span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span onclick="showFunFact(2)">❤️</span>
+        <span onclick="showFunFact(3)">❤️</span>
+
+        <span onclick="showFunFact(4)">❤️</span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span onclick="showFunFact(5)">❤️</span>
+
+        <span></span>
+        <span onclick="showFunFact(6)">❤️</span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span onclick="showFunFact(7)">❤️</span>
+        <span></span>
+
+        <span></span>
+        <span></span>
+        <span onclick="showFunFact(8)">❤️</span>
+        <span></span>
+        <span onclick="showFunFact(9)">❤️</span>
+        <span></span>
+        <span></span>
+
+        <span></span>
+        <span onclick="showFunFact(10)">❤️</span>
+        <span></span>
+        <span></span>
+        <span onclick="showFunFact(11)">❤️</span>
+        <span></span>
+        <span></span>
+
+        <span onclick="showFunFact(12)">❤️</span>
+        <span></span>
+        <span></span>
+        <span onclick="showFunFact(13)">❤️</span>
+        <span></span>
+        <span></span>
+        <span onclick="showFunFact(14)">❤️</span>
+
+        <span onclick="showFunFact(15)">❤️</span>
+        <span onclick="showFunFact(16)">❤️</span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span onclick="showFunFact(17)">❤️</span>
+        <span onclick="showFunFact(18)">❤️</span>
+    </div>
+
+    <div id="textPage" class="text-page">
+        <h1>Fun Fact About Love</h1>
+        <p id="funFact"></p>
+        <button class="back-button" onclick="goBack()">Back to Heart</button>
+    </div>
+
+    <script>
+        const funFacts = [
+            "Falling in love can induce a calming effect on the brain, with feelings of euphoria and comfort!",
+            "Love is known to reduce stress and anxiety, leading to better health!",
+            "People who hold hands with their partner often feel less physical pain.",
+            "The butterflies you feel when you’re in love are real and caused by adrenaline!",
+            "Love can improve your immune system, making you healthier!",
+            "Couples' heartbeats can synchronize when they gaze into each other’s eyes.",
+            "Oxytocin, the 'love hormone,' helps strengthen bonds between people.",
+            "Being in love has similar neurological effects as using cocaine.",
+            "Cuddling releases natural painkillers like endorphins.",
+            "Long-term love can result in actual brain changes, increasing emotional stability.",
+            "Love can make you more creative and motivated!",
+            "Being in love can lower your blood pressure and reduce the risk of heart disease.",
+            "Sharing a deep connection with someone can increase your lifespan.",
+            "Looking at a picture of a loved one can reduce physical pain.",
+            "Love can enhance your memory and brain function.",
+            "Romantic love can last a lifetime and activate the same areas of the brain as new love.",
+            "Love can make you physically warmer by increasing body temperature!",
+            "Dopamine, the 'pleasure hormone,' spikes when you're in love.",
+            "Love can help you overcome fear and increase your courage."
+        ];
+
+        function showFunFact(index) {
+            document.querySelector('.heart-shape').style.display = 'none';
+            document.getElementById('textPage').style.display = 'block';
+            document.getElementById('funFact').textContent = funFacts[index];
+        }
+
+        function goBack() {
+            document.querySelector('.heart-shape').style.display = 'grid';
+            document.getElementById('textPage').style.display = 'none';
+        }
+    </script>
+</body>
+
+
+
+
+	<footer>
+<form action="../homebutt.html">
+  <button id="sand" class="foot" type="submit"> home base </button>
+</form>
+	</footer>
+
+
+</html>

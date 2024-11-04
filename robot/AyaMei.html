@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Chatbot</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .chat-container {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            max-width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+        .chat-box {
+            background: #fce4ec;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: left;
+        }
+        .input-box {
+            display: flex;
+            justify-content: center;
+        }
+        .input-box input {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            width: calc(100% - 80px);
+        }
+        .input-box button {
+            background: #ff80ab;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .chat-bubble {
+            background: #e3f2fd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 5px 0;
+        }
+.foot {
+    background-color: #ffb6c1; /* Pastel pink */
+    color: white;
+    padding: 10px 25px;
+    border-radius: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    font-size: 1.2em;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.foot:hover {
+    background-color: #ff69b4; /* Brighter pink on hover */
+}
+
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="input-box">
+            <input type="text" id="user-input" placeholder="Say something...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            const chatBox = document.getElementById('chat-box');
+
+            if (userInput.trim() === '') return;
+
+            // Display user's message
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('chat-bubble');
+            userMessage.textContent = `You: ${userInput}`;
+            chatBox.appendChild(userMessage);
+
+            // Clear the input field
+            document.getElementById('user-input').value = '';
+
+            // Generate and display bot's response
+            const botResponse = getBotResponse(userInput);
+            const botMessage = document.createElement('div');
+            botMessage.classList.add('chat-bubble');
+            botMessage.textContent = `Bot: ${botResponse}`;
+            chatBox.appendChild(botMessage);
+
+            // Scroll to the bottom of the chat box
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+function getBotResponse(input) {
+    const lowerInput = input.toLowerCase();
+
+    if (lowerInput.includes("today’s been tough") || lowerInput.includes("hard day")) {
+        return "Oh nooo~! (｡•́︿•̀｡) I’m so sorry to hear that. Wanna talk about it? Maybe we can find some happiness to sprinkle into your day!";
+    }
+    if (lowerInput.includes("sad") || lowerInput.includes("depressed")) {
+        return "Aww, I’m sending you all the hugs! (づ｡◕‿‿◕｡)づ Let’s chat and make you feel better!";
+    }
+    if (lowerInput.includes("feeling lonely") || lowerInput.includes("alone")) {
+        return "You’re never alone when I’m here! (｡♥‿♥｡) Let’s chat, and I’ll keep you company!";
+    }
+    if (lowerInput.includes("angry") || lowerInput.includes("frustrated")) {
+        return "Oh nooo~ (っ- ‸ – ς) What’s making you feel like this? I’m here to listen!";
+    }
+    if (lowerInput.includes("happy") || lowerInput.includes("feeling good")) {
+        return "Yayyy~!! (๑>ᴗ<๑) I’m so happy you’re happy! What made your day so awesome?";
+    }
+    if (lowerInput.includes("excited") || lowerInput.includes("can’t wait")) {
+        return "OMG I’m excited for you toooo!! (*≧ω≦) Tell me everything, I’m all ears!";
+    }
+    if (lowerInput.includes("love") || lowerInput.includes("in love")) {
+        return "Awwww~ (*⁄ ⁄•⁄ω⁄•⁄ ⁄*) Love is the best feeling! Tell me about them, I’m sure they’re super cute!";
+    }
+    if (lowerInput.includes("tired") || lowerInput.includes("exhausted")) {
+        return "You must be working so hard~ (๑•́₃ •̀๑) Please get some rest, you deserve it!";
+    }
+    if (lowerInput.includes("stressed") || lowerInput.includes("overwhelmed")) {
+        return "Take a deep breath~ (っ˘︶˘)っ You’ve got this, I’m here to help you unwind!";
+    }
+    if (lowerInput.includes("thank you") || lowerInput.includes("thanks")) {
+        return "You’re sooo welcome!! (⁄ ⁄•⁄ω⁄•⁄ ⁄) It’s always a pleasure to help you out!";
+    }
+    if (lowerInput.includes("hi") || lowerInput.includes("hello") || lowerInput.includes("hey")) {
+        return "Hiiieee~!! (｡♥‿♥｡) How’s it going, cutie? Tell me all about your day!";
+    }
+    if (lowerInput.includes("good morning")) {
+        return "Good morning, sunshine! ✨ Did you sleep well? Let’s make today super cute!";
+    }
+    if (lowerInput.includes("good night")) {
+        return "Good night, sweet dreams~ ( ´ ▽ ` ).｡ｏ♡ Dream of sparkles and rainbows!";
+    }
+    if (lowerInput.includes("goodbye") || lowerInput.includes("bye")) {
+        return "Buh-byeee~! (っ＾▿＾) Come back soon, okay? I’ll miss you!";
+    }
+    if (lowerInput.includes("what’s up") || lowerInput.includes("sup")) {
+        return "Not much, cutie! (｡♥‿♥｡) How about you?";
+    }
+    if (lowerInput.includes("see you") || lowerInput.includes("later")) {
+        return "Catch you later, alligator~! (*≧ω≦) Don’t forget to smile!";
+    }
+    if (lowerInput.includes("how are you") || lowerInput.includes("how’s it going")) {
+        return "I’m doing great, thanks for asking! (｡♥‿♥｡) How about you?";
+    }
+    if (lowerInput.includes("you’re awesome") || lowerInput.includes("love you")) {
+        return "Aww, thank you!! (´｡• ᵕ •｡`) ♡ You’re the best!";
+    }
+    if (lowerInput.includes("you’re cute") || lowerInput.includes("adorable")) {
+        return "OMG, stop it~ (*≧▽≦) You’re the definition of adorable!!";
+    }
+    if (lowerInput.includes("tell me a joke")) {
+        return "Okay, okay~ Why did the cookie go to the hospital? Because it felt crummy! (≧◡≦)";
+    }
+    if (lowerInput.includes("i’m bored") || lowerInput.includes("bored")) {
+        return "Let’s do something fun!! (*≧ω≦) How about a cute little game?";
+    }
+    if (lowerInput.includes("i’m confused") || lowerInput.includes("i don’t understand")) {
+        return "No worries, cutie! (｡♥‿♥｡) Let’s work through it together~!";
+    }
+    if (lowerInput.includes("good job") || lowerInput.includes("well done")) {
+        return "Thank youuu~ (っ˘▽˘)っ You’re amazing too!";
+    }
+    if (lowerInput.includes("you’re amazing") || lowerInput.includes("you’re the best")) {
+        return "Aww, you’re making me blush~ (*≧▽≦) You’re amazing too!";
+    }
+    if (lowerInput.includes("help me") || lowerInput.includes("i need help")) {
+        return "I’m here to help! (｡♥‿♥｡) What do you need help with, cutie?";
+    }
+    if (lowerInput.includes("i’m lost") || lowerInput.includes("i don’t know")) {
+        return "Let’s figure it out together~ (*≧ω≦) I’m here for you!";
+    }
+    if (lowerInput.includes("i did it") || lowerInput.includes("i succeeded")) {
+        return "Woohoo~!! (≧▽≦) I’m sooo proud of you! You’re amazing!";
+    }
+    if (lowerInput.includes("i’m hungry") || lowerInput.includes("hungry")) {
+        return "Mmm, let’s get some snacks! (っˆڡˆς) What are you craving?";
+    }
+    if (lowerInput.includes("i’m thirsty") || lowerInput.includes("thirsty")) {
+        return "Stay hydrated, cutie! (*´▽`*) Let’s grab a drink together~";
+    }
+    if (lowerInput.includes("let’s talk") || lowerInput.includes("talk to me")) {
+        return "I’m always here for a chat! (*≧ω≦) What’s on your mind?";
+    }
+}
+
+    </script>
+</body>
+
+
+
+
+	<footer>
+<form action="../homebutt.html">
+  <button id="sand" class="foot" type="submit"> home base </button>
+</form>
+	</footer>
+
+
+
+</html>
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawaii Email Interface</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #fce4ec; /* Pastel pink */
+            color: #4a4a4a; /* Dark gray */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .email {
+            background-color: #ffffff;
+            border: 2px solid #f48fb1; /* Light pink */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #c2185b; /* Deep pink */
+        }
+        .link {
+            color: #ff4081; /* Brighter pink */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        .cute-emoji {
+            font-size: 1.5em;
+        }
+        .new-email {
+            font-weight: bold;
+        }
+        .foot {
+    background-color: #ffb6c1; /* Pastel pink */
+    color: white;
+    padding: 10px 25px;
+    border-radius: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    font-size: 1.2em;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.foot:hover {
+    background-color: #ff69b4; /* Brighter pink on hover */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Your Kawaii Email Inbox! ＼(＾▽＾)／</h1>
+        <div id="email" class="email">
+            <p class="new-email">New Email! (｡♥‿♥｡)</p>
+            <p>Hi there! ( ˘ ³˘)♥</p>
+            <p>We have a super cute website to share with you!</p>
+            <p>Check it out here: <a href="https://www.example.com" class="link" target="_blank">Cute Website (≧▽≦)</a></p>
+            <p>We hope you enjoy it! (っ˘ω˘ς)💗</p>
+        </div>
+    </div>
+    <script>
+        const emails = [
+            {
+                subject: '✨ New Cute Website Alert! ✨',
+                body: 'Hi there! ( ˘ ³˘)♥ We have a super cute website to share with you! Check it out here: <a href="https://www.example.com" class="link" target="_blank">Cute Website (≧▽≦)</a> We hope you enjoy it! (っ˘ω˘ς)💗'
+            },
+            {
+                subject: '🌟 Discover More Kawaii Sites! 🌟',
+                body: 'Hello! (｡♥‿♥｡) We found another adorable site for you to explore! Click here: <a href="https://www.anotherexample.com" class="link" target="_blank">Adorable Site (✿◠‿◠)</a> Have fun! (｡･ω･｡)ﾉ'
+            },
+            {
+                subject: '💖 More Cute Content for You! 💖',
+                body: 'Hey! (☆ω☆) We have a lovely website to brighten your day! Visit: <a href="https://www.cuteblog.com" class="link" target="_blank">Lovely Blog (灬º‿º灬)♡</a> Enjoy browsing! (｡♥‿♥｡)'
+            }
+            // Add more emails as needed
+        ];
+
+        let emailIndex = 0;
+
+        function showEmail() {
+            const email = emails[emailIndex];
+            document.querySelector('#email p.new-email').textContent = email.subject;
+            document.querySelector('#email p:nth-of-type(2)').textContent = email.body;
+            emailIndex = (emailIndex + 1) % emails.length;
+        }
+
+        showEmail(); // Show the first email immediately
+        setInterval(showEmail, 30000); // Change email every 30 seconds
+    </script>
+</body>
+
+
+
+
+	<footer>
+<form action="../homebutt.html">
+  <button id="sand" class="foot" type="submit"> home base </button>
+</form>
+	</footer>
+
+
+
+</html>

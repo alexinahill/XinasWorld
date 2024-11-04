@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawaii Canvas Painter</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffe4e1;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff69b4; /* Pink text color */
+            font-size: 2.5em;
+            background-color: #fff0f5; /* Soft pink background */
+            border: 2px solid #ffb6c1; /* Pink border */
+            border-radius: 15px;
+            padding: 10px;
+        }
+
+        .canvas-container {
+            background-color: #fff0f5;
+            border: 5px solid #ffb6c1;
+            border-radius: 20px;
+            padding: 15px;
+            display: inline-block;
+        }
+
+        canvas {
+            background-color: #ffffff;
+            border: 3px solid #ff69b4;
+            border-radius: 15px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .controls {
+            margin-top: 15px;
+        }
+
+        label {
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        input[type="color"], input[type="range"] {
+            padding: 5px;
+            margin: 10px;
+        }
+
+        button {
+            background-color: #ffb6c1;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            border: none;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #ff69b4;
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas-container">
+        <h1>Kawaii Canvas Painter (´｡• ᵕ •｡`) ♡</h1>
+        <canvas id="paintCanvas" width="800" height="500"></canvas>
+        <div class="controls">
+            <label for="colorPicker">Pick a Color: </label>
+            <input type="color" id="colorPicker" value="#ff69b4">
+            <label for="brushSize">Brush Size: </label>
+            <input type="range" id="brushSize" min="5" max="50" value="10">
+            <button id="clearCanvas">Clear Canvas</button>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('paintCanvas');
+        const ctx = canvas.getContext('2d'); // Tool to draw
+
+        let painting = false; // Track whether the user is painting
+
+        // Start painting
+        function startPosition(e) {
+            painting = true;
+            draw(e);
+        }
+
+        // Stop painting
+        function finishedPosition() {
+            painting = false;
+            ctx.beginPath(); // Stop connecting lines
+        }
+
+        // Drawing function
+        function draw(e) {
+            if (!painting) return; // Don't draw if not painting
+            ctx.lineWidth = document.getElementById('brushSize').value; // Get brush size
+            ctx.lineCap = 'round'; // Round brush stroke
+            ctx.strokeStyle = document.getElementById('colorPicker').value; // Get selected color
+            ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop); // Line to current mouse position
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop); // Move to the new point
+        }
+
+        // Clear the canvas
+        document.getElementById('clearCanvas').addEventListener('click', function() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Erase the canvas
+        });
+
+        // Event listeners to track mouse actions
+        canvas.addEventListener('mousedown', startPosition); // Mouse down = start painting
+        canvas.addEventListener('mouseup', finishedPosition); // Mouse up = stop painting
+        canvas.addEventListener('mousemove', draw); // Mouse moving = draw
+    </script>
+</body>
+
+
+
+
+	<footer>
+<form action="../homebutt.html">
+  <button id="sand" class="foot" type="submit"> home base </button>
+</form>
+	</footer>
+
+
+
+</html>
+

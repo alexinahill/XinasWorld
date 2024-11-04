@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawaii Avatar Creator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec; /* Pastel pink */
+            text-align: center;
+            color: #4a4a4a; /* Dark gray */
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #c2185b; /* Deep pink */
+        }
+        #avatar {
+            margin: 20px auto;
+            width: 150px;
+            height: 150px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            border: 5px solid #f48fb1; /* Light pink */
+            position: relative;
+            display: inline-block;
+        }
+        .eyes, .mouth {
+            position: absolute;
+            background-color: black;
+            border-radius: 50%;
+        }
+        .eyes {
+            width: 20px;
+            height: 20px;
+        }
+        .eyes.left {
+            top: 40px;
+            left: 40px;
+        }
+        .eyes.right {
+            top: 40px;
+            left: 90px;
+        }
+        .mouth {
+            width: 30px;
+            height: 20px;
+            background-color: #ffccbc; /* Light peach */
+            border-radius: 0 0 15px 15px;
+            top: 80px;
+            left: 60px;
+        }
+        #accessories {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        .accessory {
+            position: absolute;
+            background-color: #ff80ab; /* Pastel pink */
+            border-radius: 50%;
+        }
+        .bow {
+            width: 30px;
+            height: 15px;
+            background-color: #f48fb1; /* Light pink */
+            top: 10px;
+            left: 60px;
+        }
+        .glasses {
+            width: 50px;
+            height: 10px;
+            background-color: #c2185b; /* Deep pink */
+            top: 40px;
+            left: 50px;
+        }
+        .controls {
+            margin: 20px;
+        }
+        button {
+            background-color: #ff80ab; /* Pastel pink */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff4081; /* Brighter pink */
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Your Kawaii Avatar</h1>
+    <div id="avatar">
+        <div class="eyes left"></div>
+        <div class="eyes right"></div>
+        <div class="mouth"></div>
+        <div id="accessories">
+            <!-- Accessories will be added here -->
+        </div>
+    </div>
+    <div class="controls">
+        <button onclick="changeExpression('happy')">Happy</button>
+        <button onclick="changeExpression('sad')">Sad</button>
+        <button onclick="changeExpression('surprised')">Surprised</button>
+        <button onclick="toggleAccessory('bow')">Toggle Bow</button>
+        <button onclick="toggleAccessory('glasses')">Toggle Glasses</button>
+        <button onclick="changeEyeColor('#ff80ab')">Pink Eyes</button>
+        <button onclick="changeEyeColor('#c2185b')">Red Eyes</button>
+        <button onclick="changeFaceColor('#ffffff')">White Face</button>
+        <button onclick="changeFaceColor('#ffebee')">Peach Face</button>
+    </div>
+    <script>
+        function changeExpression(expression) {
+            const mouth = document.querySelector('.mouth');
+            if (expression === 'happy') {
+                mouth.style.width = '30px';
+                mouth.style.height = '20px';
+                mouth.style.borderRadius = '0 0 15px 15px';
+            } else if (expression === 'sad') {
+                mouth.style.width = '30px';
+                mouth.style.height = '20px';
+                mouth.style.borderRadius = '15px 15px 0 0';
+            } else if (expression === 'surprised') {
+                mouth.style.width = '20px';
+                mouth.style.height = '20px';
+                mouth.style.borderRadius = '50%';
+            }
+        }
+
+        function toggleAccessory(type) {
+            const accessoryDiv = document.getElementById('accessories');
+            const existingAccessory = document.querySelector(`.${type}`);
+            if (existingAccessory) {
+                existingAccessory.remove();
+            } else {
+                const accessory = document.createElement('div');
+                accessory.className = type;
+                if (type === 'bow') {
+                    accessory.style.top = '10px';
+                    accessory.style.left = '60px';
+                } else if (type === 'glasses') {
+                    accessory.style.top = '40px';
+                    accessory.style.left = '50px';
+                    accessory.style.width = '50px';
+                    accessory.style.height = '10px';
+                    accessory.style.backgroundColor = '#c2185b';
+                }
+                accessoryDiv.appendChild(accessory);
+            }
+        }
+
+        function changeEyeColor(color) {
+            document.querySelectorAll('.eyes').forEach(eye => {
+                eye.style.backgroundColor = color;
+            });
+        }
+
+        function changeFaceColor(color) {
+            document.getElementById('avatar').style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Kawaii Button Game</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #fce4ec;
+    color: #4a4a4a;
+    line-height: 1.6;
+    background-image: url('https://example.com/kawaii-background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1.finn {
+    color: #c2185b;
+    text-align: center;
+    padding: 1em;
+    background-color: #f8bbd0;
+    border-radius: 10px;
+    border: 2px solid #f48fb1;
+    animation: bounceIn 2s infinite;
+}
+
+p {
+    text-align: center;
+    padding: 0.5em;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin: 1em auto;
+    width: 80%;
+    font-style: italic;
+    color: #ff4081;
+    transition: transform 0.3s;
+}
+
+p:hover {
+    transform: scale(1.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em auto;
+    border: 2px solid #f48fb1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+button {
+    background-color: #ff80ab;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-block;
+    margin: 0.5em;
+    animation: floating 2s infinite ease-in-out;
+}
+
+button:hover {
+    background-color: #ff4081;
+    transform: scale(1.2) rotate(5deg);
+}
+
+@keyframes bounceIn {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.robot {
+    background-color: #b39ddb;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 1em 2em;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: bounceIn 2s infinite;
+}
+
+.robot:hover {
+    background-color: #9575cd;
+    transform: scale(1.1);
+}
+
+img.kawaii-img {
+    display: block;
+    margin: 1em auto;
+    width: 150px;
+    border-radius: 12px;
+}
+
+button.large-btn {
+    background-color: #ff80ab;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 1em 2em;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin: 0.5em;
+}
+
+button.large-btn:hover {
+    background-color: #ff4081;
+}
+
+/* Confetti falling effect */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: fall 2s ease-out;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100vh); }
+}
+
+/* Music Box Styling */
+.music-box {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #ffccbc;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.music-box button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.music-box button:hover {
+    background-color: #ff80ab;
+}
+</style>
+</head>
+<body>
+    <h1 class="finn">Hi! Welcome to the Kawaii Button Game! ✨<br>Which game would you like to play? 🎮</h1>
+    <p>Welcome to my magical world of HTML games! 🌸 This website is still a work in progress, so stay tuned for more adorable updates! 💖</p>
+
+    <table width="1050" border="1">
+        <tbody>
+            <tr>
+                <td width="517">
+                    <h2 class="jake large-btn"> Questionnaire ૮ ˶ᵔ ᵕ ᵔ˶ ა </h2>
+                    <div>
+                        <form action="questionnaire/2ndpage.html">
+                            <button id="ocean" class="butt1 large-btn" type="submit">Hello LOL</button>
+                        </form>
+                        <form action="questionnaire/2ndpage.html">
+                            <button id="ocean" class="butt2 large-btn" type="submit">Haii ~~</button>
+                        </form>
+                    </div>
+                </td>
+                <td width="517">
+                    <h2 class="bmo large-btn"> Math Quiz </h2>
+                    <div>
+                        <form action="math game/1stpageM.html">
+                            <button id="astro" class="large-btn" type="submit">137</button>
+                        </form>
+                        <form action="math game/1stpageM.html">
+                            <button id="astro" class="large-btn" type="submit">203</button>
+                        </form>
+                        <form action="math game/2ndpageM.html">
+                            <button id="astro" class="large-btn" type="submit">575</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+<tr>
+  <td>
+    <div>
+      <h1 class="moodboard large-btn"> Mood Board </h1>
+
+      <div id="water">
+        <table width="400" border="0">
+          <tbody>
+            <tr>
+              <td>
+                <form action="emotion potion/happi1.html">
+                  <button id="fire" class="happi large-btn" type="submit"> ＼(≧▽≦)／ </button>
+                </form>
+              </td>
+              <td>
+                <form action="emotion potion/starface.html">
+                  <button id="fire" class="likeastar large-btn" type="submit"> (☆ω☆) </button>
+                </form>
+              </td>
+              <td>
+                <form action="emotion potion/innlove.html">
+                  <button id="fire" class="calmhappi large-btn" type="submit"> (´｡• ᵕ •｡) ♡ </button>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <form action="emotion potion/avatar.html">
+                  <button id="fire" class="inlove large-btn" type="submit"> (⁄ ⁄•⁄ω⁄•⁄ ⁄) </button>
+                </form>
+              </td>
+              <td>
+                <form action="emotion potion/email.html">
+                  <button id="fire" class="embarezzed large-btn" type="submit"> ☆ｏ(＞＜；)○ </button>
+                </form>
+              </td>
+              <td>
+                <form action="emotion potion/nostalgia.html">
+                  <button id="fire" class="whateva large-btn" type="submit"> ¯\_(ツ)_/¯ </button>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <form action="emotion potion/artpage.html">
+                  <button id="fire" class="ondamove large-btn" type="submit"> ε===(っ≧ω≦)っ </button>
+                </form>
+              </td>
+              <td>
+                <form action="difaesthetics/difaes.html">
+                  <button id="fire" class="eep large-btn" type="submit"> (＞﹏＜) </button>
+                </form>
+              </td>
+              <td>
+                <form action="">
+                  <button id="fire" class="sleepy large-btn" type="submit"> (＿ ＿*) Z z z </button>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <form action="">
+                  <button id="fire" class="surprised large-btn" type="submit"> Σ(°△°|||)︴ </button>
+                </form>
+              </td>
+              <td>
+                <form action="">
+                  <button id="fire" class="crying large-btn" type="submit"> .･ﾟﾟ･(／ω＼)･ﾟﾟ･. </button>
+                </form>
+              </td>
+              <td>
+                <form action="">
+                  <button id="fire" class="fuckyoumeep large-btn" type="submit"> 凸(△´＃) </button>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </td>
+  <td>
+    <div style="text-align: center;">
+      <img src="ayamei.jpg" alt="Aya Mei" style="width: 300px; border-radius: 12px; margin-bottom: 1em;">
+      <form action="robot/AyaMei.html">
+        <button id="cute" class="robot" type="submit">Meet Aya Mei!</button>
+      </form>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+
+<script>
+  // Confetti on Hover for the Mood Board Buttons
+  const moodButtons = document.querySelectorAll('.large-btn');
+
+  moodButtons.forEach(button => {
+      button.addEventListener('mouseover', (e) => {
+          for (let i = 0; i < 10; i++) {
+              const confetti = document.createElement('div');
+              confetti.classList.add('confetti');
+              confetti.style.left = (e.clientX + Math.random() * 100 - 50) + 'px';
+              confetti.style.top = (e.clientY + Math.random() * 100 - 50) + 'px';
+              confetti.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+              document.body.appendChild(confetti);
+              setTimeout(() => confetti.remove(), 2000);
+          }
+      });
+  });
+</script>
+        </tbody>
+    </table>
+
+    <!-- Music Box -->
+    <div class="music-box">
+        <button id="music-toggle">Play Music 🎵</button>
+    </div>
+
+    <audio id="kawaii-music" loop>
+        <source src="https://example.com/kawaii-music.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        // Confetti on Hover
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('mouseover', (e) => {
+                for (let i = 0; i < 10; i++) {  // Generate more confetti on hover
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti');
+                    confetti.style.left = (e.clientX + Math.random() * 100 - 50) + 'px';
+                    confetti.style.top = (e.clientY + Math.random() * 100 - 50) + 'px';
+                    confetti.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                    document.body.appendChild(confetti);
+                    setTimeout(() => confetti.remove(), 2000);
+                }
+            });
+        });
+
+        // Music Box Toggle
+        const music = document.getElementById('kawaii-music');
+        const musicButton = document.getElementById('music-toggle');
+
+        musicButton.addEventListener('click', () => {
+            if (music.paused) {
+                music.play();
+                musicButton.textContent = 'Stop Music 🎵';
+            } else {
+                music.pause();
+                musicButton.textContent = 'Play Music 🎵';
+            }
+        });
+    </script>
+</body>
+</html>
+

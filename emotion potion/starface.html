@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funny GIF Generator</title>
+    <style>
+     <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #fce4ec; /* Pastel pink background */
+            color: #4a4a4a; /* Dark gray text */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffffff; /* White background for the container */
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #ff69b4; /* Brighter pink */
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #ff80ab; /* Pastel pink */
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #ff4081; /* Brighter pink on hover */
+        }
+
+        #gifImage {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .foot {
+            background-color: #ffb6c1; /* Pastel pink */
+            color: white;
+            padding: 10px 25px;
+            border-radius: 12px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            font-size: 1.2em;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .foot:hover {
+            background-color: #ff69b4; /* Brighter pink on hover */
+        }
+
+        footer {
+            background-color: #ffb6c1; /* Pastel pink */
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>You are a star !! # ST✩RFACE </h1>
+        <button onclick="showRandomGif()">Generate GIF</button>
+        <div id="gifContainer">
+            <img id="gifImage" src="" alt="Funny GIF">
+        </div>
+    </div>
+
+    <script>
+        const gifs = [
+            'https://media.giphy.com/media/xhTstVvf4ahBV9KGe4/giphy.gif?cid=ecf05e47qemwu34qgtocklj7o5adevgosnbnbk47gc48gt2h&ep=v1_gifs_search&rid=giphy.gif&ct=g',
+            'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDNmbms1NXBqaGl3eXlneG9zbWxmZGFjNzN5NGR4ejllY3VpcjM5ZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/1zi2SFsjUwzB0at4h1/giphy.gif',
+            'https://media.giphy.com/media/khl6RE8XNiwxstKNzE/giphy.gif?cid=790b7611l3fnk55pjhiwyygxosmlfdac73y4dxz9ecuir39e&ep=v1_gifs_search&rid=giphy.gif&ct=g',
+            'https://media.giphy.com/media/1qq40c4QMGfaE/giphy.gif?cid=ecf05e47rta0szrx9ejl5hc5l4c2jfthpnpy8h0or2rulo43&ep=v1_gifs_search&rid=giphy.gif&ct=g',
+            'https://media.giphy.com/media/UjB5sx9QyOy11Mmrhy/giphy.gif?cid=ecf05e478cu9nrw71f1xsiqn2uwk9uorrodm1rcsm5lo876a&ep=v1_gifs_search&rid=giphy.gif&ct=g'
+        ];
+
+        function showRandomGif() {
+            const randomIndex = Math.floor(Math.random() * gifs.length);
+            const gifUrl = gifs[randomIndex];
+            document.getElementById('gifImage').src = gifUrl;
+        }
+    </script>
+</body>
+
+
+
+
+	<footer>
+<form action="../homebutt.html">
+  <button id="sand" class="foot" type="submit"> home base </button>
+</form>
+	</footer>
+
+</html>
